@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ยืนยันคำสั่งซื้อ — Fresh Craft Coffee</title>
+  <meta name="description" content="กรอกข้อมูลเพื่อยืนยันคำสั่งซื้อกาแฟสดจาก Fresh Craft Coffee">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a class="logo" href="index.html">Fresh Craft Coffee</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">หน้าแรก</a></li>
+          <li><a href="product.html">เมนูทั้งหมด</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section container">
+      <h1>ยืนยันคำสั่งซื้อ</h1>
+      <p class="lede">กรอกข้อมูลของคุณให้ครบถ้วน ทีมงานจะติดต่อกลับเพื่อยืนยันออเดอร์</p>
+
+      <form id="orderForm" novalidate>
+
+        <div>
+          <label for="customerName">ชื่อ-นามสกุล</label>
+          <input type="text" id="customerName" name="customerName" placeholder="เช่น สมชาย ใจดี" required>
+        </div>
+
+        <div>
+          <label for="contact">เบอร์โทร หรือ Line ID</label>
+          <input type="text" id="contact" name="contact" placeholder="เช่น 08X-XXX-XXXX หรือ @line-id" required>
+        </div>
+
+        <div>
+          <label for="items">รายการสินค้า</label>
+          <input type="text" id="items" name="items" readonly>
+        </div>
+
+        <div>
+          <label for="total">ยอดรวม</label>
+          <input type="text" id="total" name="total" readonly>
+        </div>
+
+        <div>
+          <label for="note">หมายเหตุเพิ่มเติม (ถ้ามี)</label>
+          <textarea id="note" name="note" placeholder="เช่น หวานน้อย, ไม่ใส่น้ำแข็ง"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-caramel">ยืนยันคำสั่งซื้อ</button>
+
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="mt-0">Fresh Craft Coffee — กาแฟสดคั่วใหม่ทุกวัน</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

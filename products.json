@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Espresso Shot 16oz",
+    "price": 60,
+    "mood": "espresso",
+    "image": "images/espresso.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Espresso Shot 22oz",
+    "price": 75,
+    "mood": "espresso",
+    "image": "images/espresso.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Iced Latte 16oz",
+    "price": 70,
+    "mood": "latte",
+    "image": "images/latte.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Iced Latte 22oz",
+    "price": 85,
+    "mood": "latte",
+    "image": "images/latte.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Iced Caramel Macchiato 16oz",
+    "price": 80,
+    "mood": "latte",
+    "image": "images/latte.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Iced Caramel Macchiato 22oz",
+    "price": 95,
+    "mood": "latte",
+    "image": "images/latte.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Orange Americano 16oz",
+    "price": 85,
+    "mood": "fruity",
+    "image": "images/fruity-coffee.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Yuzu Cold Brew 16oz",
+    "price": 95,
+    "mood": "fruity",
+    "image": "images/fruity-coffee.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Classic Cold Brew 250ml",
+    "price": 89,
+    "mood": "coldbrew",
+    "image": "images/cold-brew.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Vanilla Cold Brew 250ml",
+    "price": 99,
+    "mood": "coldbrew",
+    "image": "images/cold-brew.jpg"
+  }
+]
