@@ -64,7 +64,9 @@
       })
       .catch(function (err) {
         console.error(err);
-        listEl.innerHTML = '<p class="badge-empty">ไม่สามารถโหลดข้อมูลสินค้าได้ กรุณาลองใหม่อีกครั้ง</p>';
+        if (listEl) {
+          listEl.innerHTML = '<p class="badge-empty">ไม่สามารถโหลดข้อมูลสินค้าได้ กรุณาลองใหม่อีกครั้ง</p>';
+        }
       });
   }
 
@@ -152,21 +154,22 @@
       const submitBtn = form.querySelector('[type="submit"]');
       if (submitBtn) submitBtn.disabled = true;
 
-    const payload = {
-  customerName: customerNameEl ? customerNameEl.value.trim() : '',
-  contact: contactEl ? contactEl.value.trim() : '',
-  item: itemName,
-  items: itemsEl ? itemsEl.value.trim() : itemName, // <--- เพิ่มบรรทัดนี้เข้ามา     
-  price: price,
-  total: price,
-  note: noteEl ? noteEl.value.trim() : ''
-};
+      const payload = {
+        customerName: customerNameEl ? customerNameEl.value.trim() : '',
+        contact: contactEl ? contactEl.value.trim() : '',
+        item: itemName,
+        items: itemsEl ? itemsEl.value.trim() : itemName,
+        price: price,
+        total: price,
+        note: noteEl ? noteEl.value.trim() : ''
+      };
 
       fetch(ORDER_ENDPOINT, {
         method: 'POST',
-        mode: 'no-cors', // Apps Script web apps don't return CORS headers;
-                          // no-cors lets the request go through without the
-                          // browser trying (and failing) to read the response.
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'text/plain'
+        },
         body: JSON.stringify(payload)
       })
         .then(function () {
@@ -185,6 +188,8 @@
      ------------------------------------------------------------------------ */
   function initAdminPage() {
     const table = document.getElementById('ordersTable');
+    if (!table) return;
+
     const tbody = table.querySelector('tbody') || table.appendChild(document.createElement('tbody'));
 
     fetch(ORDERS_CSV_URL)
@@ -212,8 +217,7 @@
       });
   }
 
-  // Minimal RFC4180-style CSV parser: handles quoted fields, commas and
-  // newlines inside quotes, and escaped double quotes ("").
+  // Minimal RFC4180-style CSV parser
   function parseCsv(text) {
     const rows = [];
     let row = [];
