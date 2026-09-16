@@ -131,7 +131,7 @@
     const noteEl = document.getElementById('note');
 
     const params = new URLSearchParams(window.location.search);
-    const itemName = params.get('item') || params.get('item) || '';
+    const itemName = params.get('item') || '';
     const price = Number(params.get('price')) || 0;
 
     // Auto-fill items and total as soon as the page loads.
