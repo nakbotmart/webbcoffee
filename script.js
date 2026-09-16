@@ -156,6 +156,7 @@
   customerName: customerNameEl ? customerNameEl.value.trim() : '',
   contact: contactEl ? contactEl.value.trim() : '',
   item: itemName,
+  items: itemsEl ? itemsEl.value.trim() : itemName, // <--- เพิ่มบรรทัดนี้เข้ามา     
   price: price,
   total: price,
   note: noteEl ? noteEl.value.trim() : ''
