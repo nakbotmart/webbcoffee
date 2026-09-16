@@ -131,7 +131,7 @@
     const noteEl = document.getElementById('note');
 
     const params = new URLSearchParams(window.location.search);
-    const itemName = params.get('item') || '';
+    const itemName = params.get('item') || params.get('item) || '';
     const price = Number(params.get('price')) || 0;
 
     // Auto-fill items and total as soon as the page loads.
@@ -152,14 +152,13 @@
       const submitBtn = form.querySelector('[type="submit"]');
       if (submitBtn) submitBtn.disabled = true;
 
-      const payload = {
-        customerName: customerNameEl ? customerNameEl.value.trim() : '',
-        contact: contactEl ? contactEl.value.trim() : '',
-        item: itemName,
-        price: price,
-        total: price,
-        note: noteEl ? noteEl.value.trim() : ''
-      };
+     const payload = {
+  customerName: customerNameEl ? customerNameEl.value.trim() : '',
+  contact: contactEl ? contactEl.value.trim() : '',
+  items: itemsEl ? itemsEl.value.trim() : (itemName || ''),
+  total: totalEl ? totalEl.value.trim() : price,
+  note: noteEl ? noteEl.value.trim() : ''
+};
 
       fetch(ORDER_ENDPOINT, {
         method: 'POST',
