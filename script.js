@@ -152,11 +152,12 @@
       const submitBtn = form.querySelector('[type="submit"]');
       if (submitBtn) submitBtn.disabled = true;
 
-     const payload = {
+    const payload = {
   customerName: customerNameEl ? customerNameEl.value.trim() : '',
   contact: contactEl ? contactEl.value.trim() : '',
-  items: itemsEl ? itemsEl.value.trim() : (itemName || ''),
-  total: totalEl ? totalEl.value.trim() : price,
+  item: itemName,
+  price: price,
+  total: price,
   note: noteEl ? noteEl.value.trim() : ''
 };
 
